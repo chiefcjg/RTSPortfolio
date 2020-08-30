@@ -3312,9 +3312,7 @@ GameObject:
   - component: {fileID: 1452852058}
   - component: {fileID: 1452852057}
   - component: {fileID: 1452852056}
-  - component: {fileID: 1452852059}
   - component: {fileID: 1452852060}
-  - component: {fileID: 1452852061}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -3349,15 +3347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250e016ae08f48740ac0b599acd58fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players:
-  - {fileID: 0}
-  - {fileID: 2043941171}
+  Players: []
   MapCollider: {fileID: 2026825774}
-  selectionBox: {fileID: 0}
-  unitLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  selectedUnits: []
 --- !u!4 &1452852058
 Transform:
   m_ObjectHideFlags: 0
@@ -3372,28 +3363,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1452852059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452852055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f95bc36828fcd4e885bbbc1f229d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Buttons:
-  - {fileID: 4649464000657774707}
-  - {fileID: 4649464000657841015}
-  - {fileID: 4649464000657760477}
-  - {fileID: 4649464000657802979}
-  - {fileID: 4649464000657760195}
-  - {fileID: 4649464000657799515}
-  - {fileID: 4649464000657794911}
-  - {fileID: 4649464000657769225}
-  - {fileID: 4649464000657753727}
 --- !u!114 &1452852060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,19 +3376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeBetweenChecks: 1
-  VisibleRange: 30
---- !u!114 &1452852061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452852055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3388263a6871b7348b1858977f330a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  VisibleRange: 6
 --- !u!1 &1457896564
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,7 +3406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f05cac65404a740af726473ba4814f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panSpeed: 0.6
+  panSpeed: 0.3
   rotateAmount: 60
   rotateSpeed: 60
   panDetect: 18
@@ -5614,7 +5571,6 @@ MonoBehaviour:
   unitLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  selectedUnits: []
 --- !u!1 &2124848969
 GameObject:
   m_ObjectHideFlags: 0

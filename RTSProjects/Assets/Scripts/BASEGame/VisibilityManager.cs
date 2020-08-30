@@ -19,7 +19,7 @@ public class VisibilityManager : MonoBehaviour
 		List<MapBlip> pBlips = new List<MapBlip>();
 		List<MapBlip> oBlips = new List<MapBlip>();
 
-		foreach (var p in GameManager.instance.players)
+		foreach (var p in GameManager.Current.Players)
 		{
 			foreach (var u in p.GetComponent<Player>().units)
 			{

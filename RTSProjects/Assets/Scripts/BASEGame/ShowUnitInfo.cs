@@ -33,7 +33,6 @@ public class ShowUnitInfo : Interaction
     {
         InfoManager.Current.ClearPic();
         InfoManager.Current.ClearLines();
-        ActionsManager.Current.ClearButtons();
         show = false;
     }
 }

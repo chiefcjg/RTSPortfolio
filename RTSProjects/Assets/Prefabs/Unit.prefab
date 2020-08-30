@@ -317,8 +317,6 @@ GameObject:
   - component: {fileID: -2868435582173658928}
   - component: {fileID: 3757680786906316651}
   - component: {fileID: -5764962121570087113}
-  - component: {fileID: 5579826238432682476}
-  - component: {fileID: -5482924899059394386}
   m_Layer: 8
   m_Name: Unit
   m_TagString: Unit
@@ -460,37 +458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Swap: 0
---- !u!114 &5579826238432682476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7715854448414990822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b05a0353fe136fd40a886e4395a010fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonPic: {fileID: 21300000, guid: b13b952485df1344ca8c26c7e6fdb43a, type: 3}
-  Cost: 1
-  MaxBuildDistance: 30
-  BuildingPrefab: {fileID: -927199367670048503, guid: d6b5e94ff871346428d05e3697651733,
-    type: 3}
-  GhostBuildingPrefab: {fileID: -927199367670048503, guid: d6b5e94ff871346428d05e3697651733,
-    type: 3}
---- !u!114 &-5482924899059394386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7715854448414990822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb3b161391897ce46a56c99118458286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8502382713444244199
 GameObject:
   m_ObjectHideFlags: 0

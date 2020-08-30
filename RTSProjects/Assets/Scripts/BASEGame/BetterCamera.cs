@@ -63,7 +63,7 @@ public class BetterCamera : MonoBehaviour
         float yPos = Input.mousePosition.y;
 
 
-        if (Input.GetKey(KeyCode.A) || xPos > 0 && xPos < panDetect)
+        if (Input.GetKey(KeyCode.A) || xPos > 0 && xPos <= panDetect)
         {
             moveX -= panSpeed;
         }
@@ -75,8 +75,9 @@ public class BetterCamera : MonoBehaviour
         {
             moveZ += panSpeed;
         }
-        if (Input.GetKey(KeyCode.S) || yPos > Screen.height && yPos < panDetect)
+        if (Input.GetKey(KeyCode.S) || yPos > 0 && yPos < panDetect)
         {
+            Debug.Log("work");
             moveZ -= panSpeed;
         }
 

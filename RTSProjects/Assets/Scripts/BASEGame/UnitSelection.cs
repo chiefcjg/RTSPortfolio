@@ -26,6 +26,7 @@ public class UnitSelection : MonoBehaviour
         // mouse down
         if (Input.GetMouseButtonDown(0))
         {
+            DeselectUnitStart();
             ToggleSelectionVisual(false);
             selectedUnits = new List<Unit>();
 
@@ -58,6 +59,7 @@ public class UnitSelection : MonoBehaviour
 
             if (player.IsMyUnit(unit))
             {
+                unit.GetComponent<ShowUnitInfo>().Select();
                 selectedUnits.Add(unit);
                 unit.ToggleSelectionVisual(true);
             }
@@ -91,6 +93,7 @@ public class UnitSelection : MonoBehaviour
 
             if (screenPos.x > min.x && screenPos.x < max.x && screenPos.y > min.y && screenPos.y < max.y)
             {
+                unit.GetComponent<ShowUnitInfo>().Select();
                 selectedUnits.Add(unit);
                 unit.ToggleSelectionVisual(true);
             }
@@ -103,7 +106,10 @@ public class UnitSelection : MonoBehaviour
         for (int x = 0; x < selectedUnits.Count; x++)
         {
             if (selectedUnits[x] == null)
+            {
+                selectedUnits[x].GetComponent<ShowUnitInfo>().Deselect();
                 selectedUnits.RemoveAt(x);
+            }
         }
     }
 
@@ -126,5 +132,12 @@ public class UnitSelection : MonoBehaviour
     public Unit[] GetSelectedUnits()
     {
         return selectedUnits.ToArray();
+    }
+    public void DeselectUnitStart()
+    {
+        for (int x = 0; x < selectedUnits.Count; x++)
+        {
+            selectedUnits[x].GetComponent<ShowUnitInfo>().Deselect();
+        }
     }
 }

@@ -71,7 +71,7 @@ public class CameraController : MonoBehaviour
         {
             moveZ += panSpeed;
         }
-        if (Input.GetKey(KeyCode.S) || yPos > Screen.height && yPos < panDetect)
+        if (Input.GetKey(KeyCode.S) || yPos > 0 && yPos < panDetect)
         {
             moveZ -= panSpeed;
         }
