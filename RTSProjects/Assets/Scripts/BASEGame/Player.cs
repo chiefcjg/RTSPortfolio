@@ -60,7 +60,6 @@ public class Player : MonoBehaviour
 
                 if(isMe)
                     GameUI.instance.UpdateFoodText(food);
-
                 break;
             }
         }

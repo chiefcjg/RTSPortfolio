@@ -2142,6 +2142,7 @@ GameObject:
   - component: {fileID: 928480863}
   - component: {fileID: 928480862}
   - component: {fileID: 928480861}
+  - component: {fileID: 928480864}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2197,6 +2198,18 @@ Transform:
   m_Father: {fileID: 4649464000652022995}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &928480864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928480860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1511ccae7919cfc46b603b9b337fdc94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &929944743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3313,6 +3326,7 @@ GameObject:
   - component: {fileID: 1452852057}
   - component: {fileID: 1452852056}
   - component: {fileID: 1452852060}
+  - component: {fileID: 1452852059}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -3363,6 +3377,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452852059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452852055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f95bc36828fcd4e885bbbc1f229d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buttons:
+  - {fileID: 4649464000657774707}
+  - {fileID: 4649464000657841015}
+  - {fileID: 4649464000657760477}
+  - {fileID: 4649464000657802979}
+  - {fileID: 4649464000657760195}
+  - {fileID: 4649464000657799515}
+  - {fileID: 4649464000657794911}
+  - {fileID: 4649464000657769225}
+  - {fileID: 4649464000657753727}
 --- !u!114 &1452852060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3376,7 +3412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeBetweenChecks: 1
-  VisibleRange: 6
+  VisibleRange: 10
 --- !u!1 &1457896564
 GameObject:
   m_ObjectHideFlags: 0
@@ -5567,6 +5603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c827b730b45644e83cd1a6bb18415e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionButtonClicked: 0
   selectionBox: {fileID: 1310167811}
   unitLayerMask:
     serializedVersion: 2

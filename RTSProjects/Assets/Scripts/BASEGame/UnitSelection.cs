@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UnitSelection : MonoBehaviour
 {
+    public bool actionButtonClicked = false;
+
     public RectTransform selectionBox;
     public LayerMask unitLayerMask;
 
@@ -14,6 +16,12 @@ public class UnitSelection : MonoBehaviour
     private Camera cam;
     private Player player;
 
+    public static UnitSelection Current;
+
+    public UnitSelection()
+    {
+        Current = this;
+    }
     void Awake()
     {
         // get the components
@@ -26,12 +34,16 @@ public class UnitSelection : MonoBehaviour
         // mouse down
         if (Input.GetMouseButtonDown(0))
         {
-            DeselectUnitStart();
-            ToggleSelectionVisual(false);
-            selectedUnits = new List<Unit>();
+            
+        if (actionButtonClicked)
+            return;
+                DeselectUnitStart();
+                ToggleSelectionVisual(false);
+                selectedUnits = new List<Unit>();
 
-            TrySelect(Input.mousePosition);
-            startPos = Input.mousePosition;
+                TrySelect(Input.mousePosition);
+                startPos = Input.mousePosition;
+            
         }
 
         // mouse up
@@ -59,6 +71,7 @@ public class UnitSelection : MonoBehaviour
 
             if (player.IsMyUnit(unit))
             {
+                unit.GetComponent<Interactive>().Select();
                 unit.GetComponent<ShowUnitInfo>().Select();
                 selectedUnits.Add(unit);
                 unit.ToggleSelectionVisual(true);
