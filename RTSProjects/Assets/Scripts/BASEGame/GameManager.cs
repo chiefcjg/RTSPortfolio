@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public GameManager()
     {
+        instance = this;
         Current = this;
     }
 

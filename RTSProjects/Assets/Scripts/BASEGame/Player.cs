@@ -20,10 +20,14 @@ public class Player : MonoBehaviour
     public GameObject unitPrefab;
     public Transform unitSpawnPos;
 
+
+    public int TechnologyLevel = 0;
+
     // events
     [System.Serializable]
     public class UnitCreatedEvent : UnityEvent<Unit> { }
     public UnitCreatedEvent onUnitCreated;
+    public UnitCreatedEvent onUnit1Created;
 
     public readonly int unitCost = 50;
 
@@ -92,5 +96,41 @@ public class Player : MonoBehaviour
     public bool IsMyUnit (Unit unit)
     {
         return units.Contains(unit);
+    }
+
+    public void IncreaseTechnology()
+    {
+        if (TechnologyLevel == 0)
+        {
+            foreach (Unit unit in units)
+            {
+                unit.curHp = unit.curHp;
+                unit.maxHp = unit.maxHp;
+            }
+        }
+        if (TechnologyLevel == 1)
+        {
+            foreach (Unit unit in units)
+            {
+                unit.curHp = unit.curHp + 10;
+                unit.maxHp = unit.maxHp + 10;
+            }
+        }
+        if (TechnologyLevel == 2)
+        {
+            foreach (Unit unit in units)
+            {
+                unit.curHp = unit.curHp + 15;
+                unit.maxHp = unit.maxHp + 15;
+            }
+        }
+        if (TechnologyLevel == 3)
+        {
+            foreach (Unit unit in units)
+            {
+                unit.curHp = unit.curHp + 20;
+                unit.maxHp = unit.maxHp + 20;
+            }
+        }
     }
 }

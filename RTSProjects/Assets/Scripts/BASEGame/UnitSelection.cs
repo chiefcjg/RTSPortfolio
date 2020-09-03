@@ -8,8 +8,10 @@ public class UnitSelection : MonoBehaviour
 
     public RectTransform selectionBox;
     public LayerMask unitLayerMask;
+    public LayerMask BuildingLayerMask;
 
     private List<Unit> selectedUnits = new List<Unit>();
+    private List<Unit> Buildings = new List<Unit>();
     private Vector2 startPos;
 
     // components
@@ -33,17 +35,13 @@ public class UnitSelection : MonoBehaviour
     {
         // mouse down
         if (Input.GetMouseButtonDown(0))
-        {
-            
-        if (actionButtonClicked)
-            return;
+        {            
                 DeselectUnitStart();
                 ToggleSelectionVisual(false);
                 selectedUnits = new List<Unit>();
 
                 TrySelect(Input.mousePosition);
-                startPos = Input.mousePosition;
-            
+                startPos = Input.mousePosition;            
         }
 
         // mouse up
@@ -66,6 +64,18 @@ public class UnitSelection : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100, unitLayerMask))
+        {
+            Unit unit = hit.collider.GetComponent<Unit>();
+
+            if (player.IsMyUnit(unit))
+            {
+                unit.GetComponent<Interactive>().Select();
+                unit.GetComponent<ShowUnitInfo>().Select();
+                selectedUnits.Add(unit);
+                unit.ToggleSelectionVisual(true);
+            }
+        }
+        if (Physics.Raycast(ray, out hit, 100, BuildingLayerMask))
         {
             Unit unit = hit.collider.GetComponent<Unit>();
 
